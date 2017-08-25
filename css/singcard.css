@@ -1,0 +1,81 @@
+      @font-face{
+        font-family: Bubbler One;
+        src: url('../fonts/BubblerOne-Regular.ttf');
+      } 
+      *{ 
+        margin: 0;
+        padding: 0;
+      }
+      body{
+        background-color: #000;
+        width:100%;
+        height:100%;
+        overflow:hidden;
+      }
+      .app{ 
+        height:100%;
+        overflow:hidden;
+      } 
+      .singcard{
+        width: 96%;
+        height: 90%;
+        position: fixed; 
+        left: 2%;
+        top: 2%;
+        text-align: center;
+        font-size: 32px; 
+        font-family: 'Bubbler One'; 
+        border-radius: 2%; 
+        background-color: rgba(255,255,255,1);
+        /*border:2px solid #00ff00;  */
+      } 
+      ::selection{
+          color: #18E698;
+          background-color: #000;
+      } 
+      .singcard .header{
+        position: relative;  
+        width:70%; 
+        top:5%;/*调整图片的高度*/ 
+        margin:0 auto;
+        /*border:1px solid red;*/
+      } 
+      .singcard .header img{
+        width:100%; 
+        border-radius: 50%; 
+      } 
+      .singcard .caption{
+        position: relative;
+        width:100%;   
+        margin:20% auto;/*调整动画和文字一并的高度*/
+        /*border:1px solid #00ff00; */
+      }
+      .singcard .caption img{ 
+        position: relative; 
+        width:15%; 
+        /*border:1px solid red;*/
+        top: 20%;/*调整动画的高度*/
+        margin-bottom: 8%;
+      } 
+      .singcard .caption p{
+         /*调整文字和动画的间距*/
+      }
+      .singcard .nextbtn{
+        width:80px;
+        height: 80px;
+        border-radius: 50%;
+        position: relative;
+        margin:0 auto;
+        bottom:0; 
+        background-image: url(../image/rabbit.png);
+        background-size:80px 80px;
+        background-color: #fff;
+        text-align: center; 
+        border:1px solid rgba(255,255,255,0);
+      } 
+      .singcard .nextbtn:active, .singcard .nextbtn:focus{
+        outline-color: transparent;
+
+      }
+      
+      

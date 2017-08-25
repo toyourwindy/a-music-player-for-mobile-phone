@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="utf-8">
+    <title>听</title>  
+    <script src="js/vue.js"></script> 
+    <link href="css/singcard.css" rel="stylesheet" /> 
+    <script src="js/elementui.js"></script>
+    <link href="css/elementui.css" rel="stylesheet" /> 
+  </head>
+  <body id="body">
+    <div id="app" class="app"> 
+      <el-row>
+        <el-col :span="24">
+            <my-card v-bind:obj="cards"></my-card>
+        </el-col> 
+      </el-row>  
+    </div> 
+  	<script src="js/mycomponent.js"></script>
+    <script src="js/data.js"></script> 
+    <script type="text/javascript">
+      document.getElementById("app").style.height = window.screen.height +'px';
+    </script>
+  </body>
+</html>
