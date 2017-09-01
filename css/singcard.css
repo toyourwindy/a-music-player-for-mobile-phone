@@ -64,18 +64,16 @@
         width:80px;
         height: 80px;
         border-radius: 50%;
-        position: relative;
-        margin:0 auto;
+        position: fixed; 
         bottom:0; 
+        right:0;
         background-image: url(../image/rabbit.png);
         background-size:80px 80px;
-        background-color: #fff;
-        text-align: center; 
-        border:1px solid rgba(255,255,255,0);
+        background-color: transparent; 
+        border:1px solid rgba(255,0,0,0);
       } 
       .singcard .nextbtn:active, .singcard .nextbtn:focus{
         outline-color: transparent;
-
       }
       
       
