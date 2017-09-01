@@ -1,27 +1,27 @@
 Vue.component("my-card",{
-	template:'<div v-bind:id="this.card.cardid" class="singcard" ref="cardref"><div class="header"><img id="img" v-bind:src="this.card.pic_url" ref="imgref" v-on:click="goRepeat" alt="PIC"/></div><div class="caption"><img v-bind:src="this.playingIcon"/><p>{{this.card.name}}</p></div><audio id="song" ref="profile" preload="auto" v-bind:src="this.card.media_url" >Your browser does not support the audio element.</audio><button v-on:click.stop="btnclick" class="nextbtn"></button></div>',
+	template:'<div v-bind:id="this.card.cardid" class="singcard" ref="cardref"><div class="header"><img id="img" v-bind:src="this.card.pic_url" ref="imgref" v-on:click="goRepeat" alt="PIC"/></div><div class="caption"><img v-bind:src="this.playingIcon"/><p>{{this.card.name}}</p></div><audio id="song" v-bind:src="this.card.media_url"  ref="profile" preload="auto" loop="loop">Your browser does not support the audio element.</audio><button v-on:click.stop="btnclick" class="nextbtn"></button></div>',
 	props:['obj'], 
 	data: function () {
 	    return {
-		icon:[
-			'image/icon1.png',
-			'image/icon2.png',
-			'image/icon3.png',
-			'image/icon4.png',
-			'image/icon5.png'
-		],
-	      	counter: 0, //第几张音效动画图
-		playingIcon:"image/icon5.png",
-		istrue: false,
-		timer: 0, //setInterval 音效动画
-		rotate: 0, //setInterval 旋转动画
-		isend: 0,
-		index: 0,
-		card: 0,
-		angle: 0,//图片旋转角度 
-		song: 0,
-		strong: 0, //setInterval 声音渐强
-		dispear: 0//setInterval 声音渐弱
+			icon:[
+				'image/icon1.png',
+				'image/icon2.png',
+				'image/icon3.png',
+				'image/icon4.png',
+				'image/icon5.png'
+			],
+		    counter: 0, //第几张音效动画图
+			playingIcon:"image/icon5.png",
+			istrue: false,
+			timer: 0, //setInterval 音效动画
+			rotate: 0, //setInterval 旋转动画
+			isend: 0,
+			index: 0,
+			card: 0,
+			angle: 0,//图片旋转角度 
+			song: 0,
+			strong: 0, //setInterval 声音渐强
+			dispear: 0//setInterval 声音渐弱
 	    }
 	},
 	mounted: function () { //默认值是第一张卡片
@@ -32,12 +32,12 @@ Vue.component("my-card",{
 	methods: { 
 		//音效动画
 		repeat: function () {
-		    	this.playingIcon = this.icon[this.counter];  
+		     this.playingIcon = this.icon[this.counter];  
 		   	 this.counter = (this.counter + 1) % 5; //5个图片构成动画
 		}, 
 		//旋转图片
 		goRotate: function (){ 
-		   	this.angle = this.angle + 0.1;  
+		   	this.angle = this.angle + 0.05;  
 		   	this.$refs.imgref.style.transform = "rotate(" + this.angle + "deg)"; 
 		},
 		//声音渐强
@@ -63,8 +63,8 @@ Vue.component("my-card",{
 			// console.log(song.volume);
 		},
 		//点击播放下一曲
-	    	btnclick: function(){ 
-			this.index = (this.index + 1) % 8;//几张卡片mod几
+	    btnclick: function(){ 
+			this.index = (this.index + 1) % 9;//几张卡片mod几
 			this.card = this.obj[this.index]; 
 			//停止音效动画
 			clearInterval(this.timer); 
@@ -88,7 +88,7 @@ Vue.component("my-card",{
 				this.istrue = false; 
 			} 
 		}, 
-	    	goRepeat: function(){  
+	    goRepeat: function(){  
 			clearInterval(this.timer);  
 		    	this.istrue = !this.istrue;  
 			if(this.istrue){ 
@@ -99,7 +99,7 @@ Vue.component("my-card",{
 				//旋转图片
 				this.rotate = setInterval(function(){ 
 					that.goRotate();
-				}, 10);
+				}, 5);
 				//音乐渐强至播放
 				this.$refs.profile.volume = 0.2;
 				this.$refs.profile.play(); 
@@ -126,5 +126,5 @@ Vue.component("my-card",{
 		   	 }
 	  	}  
 
-    	}
+    }
 })
