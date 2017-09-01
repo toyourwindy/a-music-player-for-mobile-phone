@@ -1,0 +1,31 @@
+CACHE MANIFEST
+#VERSION 1.8
+
+CACHE:  
+	index.html 
+	/js/vue.js
+	/js/data.js  
+	/js/mycomponent.js
+	/fonts/BubblerOne-Regular.ttf 
+	/css/singcard.css
+	/image/icon1.png
+	/image/icon2.png
+	/image/icon3.png
+	/image/icon4.png
+	/image/icon5.png
+	/image/rabbit.png 
+	/image/loststars.jpg
+	/image/light.jpg
+	/image/zixia.jpg
+	/image/mo.jpg
+	/image/lin1.jpg
+	/image/tylor.jpg
+	/image/asi.JPG
+	/image/apple.jpg
+	/image/SquarePants.jpg   
+
+NETWORK: 
+	*
+
+FALLBACK: 
+	 
